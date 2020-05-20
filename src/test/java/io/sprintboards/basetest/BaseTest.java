@@ -23,7 +23,7 @@ public class BaseTest {
     public void setUpBrowser() {
         log.info("Starting Browser");
         basePage = new BasePage();
-        prop = basePage.initialize_Properties();
+        prop = basePage.initializeProperties();
         driver = basePage.initialize_driver();
         driver.get(prop.getProperty("url"));
 

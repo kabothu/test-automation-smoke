@@ -27,8 +27,6 @@ public class BasePage {
     public static WebDriver driver;
     public Properties prop;
     OptionsManager optionsManager;
-    public static NgWebDriver ngWebDriver;
-    public static JavascriptExecutor jsDriver;
     public static ThreadLocal<WebDriver> tlDriver = new ThreadLocal<>();
     String browser;
 
@@ -67,9 +65,6 @@ public class BasePage {
 
         getDriver().manage().deleteAllCookies();
         getDriver().manage().window().maximize();
-        jsDriver = (JavascriptExecutor) getDriver();
-        ngWebDriver = new NgWebDriver(jsDriver);
-        ngWebDriver.waitForAngularRequestsToFinish();
         getDriver().manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
         getDriver().manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         return getDriver();
@@ -85,10 +80,10 @@ public class BasePage {
      * @return prop
      */
 
-    public Properties initialize_Properties() {
+    public Properties initializeProperties() {
         prop = new Properties();
         String path = null;
-        String env = null;
+        String env;
         try {
             env = System.getProperty("env");
             if (env == null) {
@@ -116,25 +111,11 @@ public class BasePage {
 
             FileInputStream ip = new FileInputStream(path);
             prop.load(ip);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
         return prop;
     }
 
-
-    public String getScreenshot() {
-        File src = ((TakesScreenshot) getDriver()).getScreenshotAs(OutputType.FILE);
-        String path = System.getProperty("user.dir") + "/Screenshots/" + System.currentTimeMillis() + ".png";
-        File destination = new File(path);
-        try {
-            FileUtils.copyFile(src, destination);
-        } catch (IOException e) {
-            System.out.println("Screenshot Capture Failed " + e.getMessage());
-        }
-        return path;
-    }
 
 }

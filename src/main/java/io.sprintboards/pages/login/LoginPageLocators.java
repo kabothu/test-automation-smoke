@@ -1,12 +1,10 @@
 package io.sprintboards.pages.login;
-
-import com.paulhammant.ngwebdriver.ByAngular;
-import com.paulhammant.ngwebdriver.ByAngularModel;
 import org.openqa.selenium.By;
 
 public class LoginPageLocators {
 
-    private static final By EMAIL_FIELD         = By.xpath("");
-
+    public static final By EMAIL_XPATH      = By.xpath("//input[@type='email']");
+    public static final By PASSWORD_XPATH   = By.xpath("//input[@type='password']");
+    public static final By LOGIN_BTN_XPATH  = By.xpath("//button[@type='submit' and text()='Login']");
 
 }

@@ -31,10 +31,4 @@ public class OptionsManager {
         return fo;
     }
 
-    public SafariOptions getSafariOptions() {
-        sf = new SafariOptions();
-        return sf;
-    }
-
-
 }

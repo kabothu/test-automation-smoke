@@ -10,15 +10,9 @@ import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
-
-
-
 /**
- *
  * @author SurendraSingh
- *
  */
-
 
 public class TestAllureListener implements ITestListener {
 
