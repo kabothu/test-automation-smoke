@@ -24,7 +24,7 @@ public class BaseTest {
         log.info("Starting Browser");
         basePage = new BasePage();
         prop = basePage.initializeProperties();
-        driver = basePage.initialize_driver();
+        driver = basePage.initializeDriver();
         driver.get(prop.getProperty("url"));
 
     }

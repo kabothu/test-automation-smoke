@@ -1,21 +1,13 @@
 package io.sprintboards.base;
 
-import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
-import com.paulhammant.ngwebdriver.NgWebDriver;
-
 import io.github.bonigarcia.wdm.WebDriverManager;
 import io.sprintboards.utils.OptionsManager;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -24,11 +16,11 @@ import org.openqa.selenium.safari.SafariDriver;
 @Slf4j
 public class BasePage {
 
-    public static WebDriver driver;
     public Properties prop;
     OptionsManager optionsManager;
     public static ThreadLocal<WebDriver> tlDriver = new ThreadLocal<>();
     String browser;
+
 
     /**
      * This method is used to init the driver on the basis on given browser/environment
@@ -37,8 +29,7 @@ public class BasePage {
      * @return driver
      */
 
-
-    public WebDriver initialize_driver() {
+    public WebDriver initializeDriver() {
         String browser1 = System.getProperty("browser");
         if (browser1 != null) {
             browser = browser1;

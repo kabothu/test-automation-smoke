@@ -1,0 +1,12 @@
+*.iml
+*.ipr
+*.iws
+test-output
+.idea
+target
+logs
+.DS_Store
+id_rsa.txt
+allure-results
+*/allre-results
+workspace.xml

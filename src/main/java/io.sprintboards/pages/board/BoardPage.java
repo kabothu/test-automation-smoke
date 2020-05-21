@@ -82,21 +82,20 @@ public class BoardPage extends BrowserWait {
     @Step("clicking on thumbs up icon in Went Well section")
     public void clickThumbsIconInWentWellSection() {
         log.info("clicking on thumbs up icon in Went Well section");
-        waitUntilElementClickable(THUMBS_ICON_WENT_WELL_CARD_XPATH);
-        clickElementBy(THUMBS_ICON_WENT_WELL_CARD_XPATH);
+        try {
+            waitUntilElementClickable(THUMBS_ICON_WENT_WELL_CARD_XPATH);
+            clickElementBy(THUMBS_ICON_WENT_WELL_CARD_XPATH);
+            Thread.sleep(4000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     public Integer getNumberOfLikesInWentWellSection() {
         log.info("getting number of likes in Went Well section");
-        try {
-            Thread.sleep(3000);
             waitUntilElementIsDisplayed(THUMBS_ICON_WENT_WELL_CARD_XPATH);
             waitUntilElementIsDisplayed(LIKES_COUNT_ICON_WENT_WELL_CARD_XPATH);
             return getNumberFromElement(LIKES_COUNT_ICON_WENT_WELL_CARD_XPATH);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        return null;
     }
 
     @Step("clicking on delete button in Didn't go well section")

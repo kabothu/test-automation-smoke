@@ -13,7 +13,7 @@ import org.testng.Assert;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-@Story("Activity Page functionality")
+@Story("Board Page functionality")
 @Listeners({TestAllureListener.class})
 @Owner("Surendra Singh")
 @Epic("Create board feature implementation")
@@ -34,7 +34,7 @@ public class SmokeTests extends BaseTest {
 
     @Description("create a board, add green and red cards, like in green card, delete red card test")
     @Severity(SeverityLevel.CRITICAL)
-    @Test(priority = 1,groups = Groups.SPRINT_BOARD_SMOKE)
+    @Test(priority = 1, groups = Groups.SPRINT_BOARD_SMOKE)
     public void creatingBoardAddDeleteCardLikesTest() {
 
         //Test data
@@ -76,8 +76,8 @@ public class SmokeTests extends BaseTest {
 
         //Likes in green card
         boardPage.clickThumbsIconInWentWellSection();
-        int numberOflikes = boardPage.getNumberOfLikesInWentWellSection();
-        Assert.assertEquals(numberOflikes, 1, "Number of likes did not increase from 0 to 1");
+        int likesCount = boardPage.getNumberOfLikesInWentWellSection();
+        Assert.assertEquals(likesCount, 1, "Number of likes did not increase from 0 to 1");
 
         //Deleting red card
         boardPage.clickDeleteButtonInDidNotGoWellSection();
