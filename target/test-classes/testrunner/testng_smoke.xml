@@ -3,6 +3,8 @@
 
 <suite name="Sprint Board Smoke Test Suite" verbose="2">
     <listeners>
+        <listener class-name="io.sprintboards.listeners.TestAllureListener"/>
+        <listener class-name="io.sprintboards.listeners.RetryTransformer"/>
     </listeners>
     <test name="Sprint Board Smoke Test Suite">
         <classes>
