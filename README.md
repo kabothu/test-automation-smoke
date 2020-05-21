@@ -11,6 +11,7 @@ This is a automation framework to support planned smoke test plan
 - Default browser and environment : QA/Chrome
 - Useful generic utilities like Browser Actions, Browser Wait to dynamically apply wait and perform common browser/element actions
 - Usage of WebDriverManager : in order to automatically download the driver's binary files (.exe files) for Web Automation (to get rid off compatibility issues between driver's .exe file and browser version installed in the system) 
+- Usage of TestNg Retry Listner : implementaion of IAnnotationTransformer interface to rerun only failed test methods
 ## Getting started 
 ### Setup Instructions : 
  -  Make sure that Maven, Java (v1.8) is installed and system environment variables are configured correctly
