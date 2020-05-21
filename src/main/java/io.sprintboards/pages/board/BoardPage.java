@@ -3,7 +3,9 @@ package io.sprintboards.pages.board;
 import io.qameta.allure.Step;
 import io.sprintboards.utils.BrowserWait;
 import lombok.extern.slf4j.Slf4j;
+
 import javax.validation.constraints.NotNull;
+
 import static io.sprintboards.pages.board.BoardPageLocators.*;
 import static io.sprintboards.utils.BrowserActions.*;
 
@@ -93,9 +95,9 @@ public class BoardPage extends BrowserWait {
 
     public Integer getNumberOfLikesInWentWellSection() {
         log.info("getting number of likes in Went Well section");
-            waitUntilElementIsDisplayed(THUMBS_ICON_WENT_WELL_CARD_XPATH);
-            waitUntilElementIsDisplayed(LIKES_COUNT_ICON_WENT_WELL_CARD_XPATH);
-            return getNumberFromElement(LIKES_COUNT_ICON_WENT_WELL_CARD_XPATH);
+        waitUntilElementIsDisplayed(THUMBS_ICON_WENT_WELL_CARD_XPATH);
+        waitUntilElementIsDisplayed(LIKES_COUNT_ICON_WENT_WELL_CARD_XPATH);
+        return getNumberFromElement(LIKES_COUNT_ICON_WENT_WELL_CARD_XPATH);
     }
 
     @Step("clicking on delete button in Didn't go well section")

@@ -44,7 +44,7 @@ public class CreateBoardPage extends BrowserWait {
 
     public String getTextFromConfirmationPopUp() {
         log.info("capturing success text from confirmation pop-up");
-        waitUntilElementIsPresent(CONFIRMATION_POPUP_MESSAGE);
+        waitUntilElementIsDisplayed(CONFIRMATION_POPUP_MESSAGE);
         return getTextFromElement(CONFIRMATION_POPUP_MESSAGE);
     }
 
