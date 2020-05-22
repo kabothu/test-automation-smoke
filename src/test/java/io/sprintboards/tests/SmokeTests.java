@@ -87,9 +87,4 @@ public class SmokeTests extends BaseTest {
         Assert.assertTrue(boardPage.checkIfCardIsPresentInDidNotGoWellSection());
     }
 
-    @Test
-    public void test1(){
-        System.out.println("hello");
-        Assert.assertTrue(false);
-    }
 }
